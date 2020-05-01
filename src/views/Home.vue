@@ -1,18 +1,23 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <div class="home"></div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import { onMessage, subscribesAll, UnSubscribesAll } from "@/config/mqttConfig";
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
+  name: "Home",
+  data: () => {
+    return {
+      mqtt: null
+    };
+  },
+  components: {},
+  mounted() {
+    subscribesAll("#");
+    onMessage((topic, message) => {
+      console.log(message.toString());
+    });
   }
-}
+};
 </script>
