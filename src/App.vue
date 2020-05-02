@@ -1,35 +1,27 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/2">Home2</router-link>|
-      <router-link to="/3">Home3</router-link>|
-      <router-link to="/about">About</router-link>|
-      <router-link to="/about2">About2</router-link>
-    </div>
-    <router-view />
-  </div>
+  <v-app id="inspire">
+    <v-content>
+      <v-container>
+        <v-row align="center" justify="center">
+          <v-col cols="12" sm="8" md="4">
+            <router-link to="/">Home</router-link>|
+            <router-link to="/2">Home2</router-link>|
+            <router-link to="/3">Home3</router-link>|
+            <router-link to="/about">About</router-link>|
+            <router-link to="/about2">About2</router-link>
+          </v-col>
+        </v-row>
+        <v-row>
+          <router-view />
+        </v-row>
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<script>
+export default {
+  name: "App",
+  data: () => ({})
+};
+</script>
